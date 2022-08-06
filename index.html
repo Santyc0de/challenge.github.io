@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Encriptador de texto en HTML</title>
+</head>
+
+<body>
+
+    <header>
+        <ul>
+            <li>
+                <a href="" target="_blank">Repositories</a></li>
+            <li><a href="https://github.com/Santyc0de" target="_blank">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/santiago-tevez/" target="_blank">Linkedin</a></li>
+        </ul>
+    </header>
+
+    <h1>Encriptador de texto en HTML</h1>
+
+
+    <section>
+
+        <input type="text" class="input-entrada" placeholder= "Ingrese El texto aqui" maxlength="175"/>
+
+        <section class="section-btn">
+            <h6>Solo letras minúsculas y sin acentos</h6>
+            <button class="section-btn-open">Encriptar</button>
+            <button class="section-btn-close">Desencriptar</button>
+        </section>
+    </section>
+
+    <section class="box-encryptor white">
+        <p class="white para">Ingrea el secreto que deseas Encriptar o Desencriptar</p>
+        <input type="text" class="input-salida">
+    </section>
+    
+
+
+        <script>
+
+function encriptar(){
+    var texto = document.querySelector("input").value;
+    var textoCifrado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
+    document.querySelector(".input-salida").value = textoCifrado;
+    document.querySelector("input").value; 
+}
+
+var button1 = document.querySelector(".section-btn-open");
+button1.onclick = encriptar;
+
+function desencriptar(){
+    var texto = document.querySelector("input").value;
+    var textoCifrado = texto.replace(/enter/gi, "e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u");
+    
+    document.querySelector(".input-salida").value = textoCifrado;
+    document.querySelector("input").value;
+}
+
+var button2 = document.querySelector(".section-btn-close");
+button2.onclick = desencriptar;
+
+
+    </script>
+
+
+</body>
+
+</html>
